@@ -1,0 +1,10 @@
+.bg {
+  /* The image used */
+  background-image: url("../images/bckgrnd.png");
+
+  height: 540px;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
