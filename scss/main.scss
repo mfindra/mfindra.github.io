@@ -1,8 +1,16 @@
+$theme-colors: (
+  "primary": #f9ba32,
+  "danger": #ff4136
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
 .bg {
-  /* The image used */
   background-image: url("../images/bckgrnd.png");
 
-  height: 540px;
+  /* Full height */
+  height: 500px;
+
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
