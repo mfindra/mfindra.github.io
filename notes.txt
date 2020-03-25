@@ -1,0 +1,7 @@
+colors used:
+#F9BA32 - yellow
+#426E86 - steel blue
+#F8F1E5 - bone
+#2F3131 - coal
+
+todo:

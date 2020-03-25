@@ -1,143 +1,326 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-
-    <!-- Bootstrap CSS -->
-
-    <link rel="stylesheet" href="scss/main.css" />
-
-    <title>Programming portfolio</title>
-  </head>
-  <body>
-    <div class="c_container">
-      <!--navbar-->
-      <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link h5" href="#"
-                >O mne<span class="sr-only"></span
-              ></a>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle h5"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Projekty
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Softwerové</a>
-                <a class="dropdown-item" href="#">Hardwerové</a>
-              </div>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link h5" href="#">Kontakt</a>
-            </li>
-            <li class="nav-item">
-              <a class="navbar-brand pl-2" href="#">
-                <?xml version="1.0" encoding="iso-8859-1"?>
-                <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                <svg
-                  version="1.1"
-                  id="Layer_1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  x="0px"
-                  y="0px"
-                  viewBox="0 0 512 512"
-                  style="enable-background:new 0 0 512 512;"
-                  xml:space="preserve"
-                  height="30"
-                >
-                  <circle style="fill:#F0F0F0;" cx="256" cy="256" r="256" />
-                  <path
-                    style="fill:#0052B4;"
-                    d="M256,512c141.384,0,256-114.616,256-256c0-31.314-5.632-61.311-15.923-89.043H15.923
-                  C5.633,194.689,0,224.686,0,256C0,397.384,114.616,512,256,512z"
-                  />
-                  <path
-                    style="fill:#D80027;"
-                    d="M256,512c110.071,0,203.906-69.472,240.077-166.957H15.923C52.094,442.528,145.929,512,256,512z"
-                  />
-                  <path
-                    style="fill:#F0F0F0;"
-                    d="M66.198,144.696v127.706c0,72.644,94.901,94.903,94.901,94.903s94.9-22.259,94.9-94.903V144.696
-                  H66.198z"
-                  />
-                  <path
-                    style="fill:#D80027;"
-                    d="M88.459,144.696v127.706c0,8.528,1.894,16.582,5.646,24.133c37.234,0,92.886,0,133.987,0
-                  c3.752-7.55,5.646-15.605,5.646-24.133V144.696H88.459z"
-                  />
-                  <polygon
-                    style="fill:#F0F0F0;"
-                    points="205.62,233.739 172.23,233.739 172.23,211.478 194.491,211.478 194.491,189.217 
-                  172.23,189.217 172.23,166.957 149.969,166.957 149.969,189.217 127.709,189.217 127.709,211.478 149.969,211.478 149.969,233.739 
-                  116.577,233.739 116.577,256 149.969,256 149.969,278.261 172.23,278.261 172.23,256 205.62,256 "
-                  />
-                  <path
-                    style="fill:#0052B4;"
-                    d="M124.471,327.61c14.345,9.015,29.083,14.249,36.628,16.577c7.545-2.327,22.283-7.562,36.628-16.577
-                  c14.466-9.092,24.607-19.49,30.365-31.075c-6.351-4.493-14.1-7.143-22.471-7.143c-3.048,0-6.009,0.361-8.856,1.024
-                  c-6.033-13.708-19.728-23.285-35.665-23.285s-29.633,9.577-35.665,23.285c-2.847-0.663-5.809-1.024-8.856-1.024
-                  c-8.371,0-16.12,2.65-22.471,7.143C99.863,308.119,110.004,318.517,124.471,327.61z"
-                  />
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <!--jumbotron-->
-      <div class="jumbotron">
-        <h1 class="display-4">Uvítanie</h1>
-        <p class="lead">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus molestiae ea, itaque quia perspiciatis earum vel cum reiciendis 
-        </p>
-        <hr class="my-4" />
-        <p>
-          It uses utility classes for typography and spacing to space content
-          out within the larger container.
-        </p>
-        
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8" />
+      <meta
+         name="viewport"
+         content="width=device-width, initial-scale=1, shrink-to-fit=no"
+         />
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="scss/main.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <title>Programming portfolio</title>
+   </head>
+   <body>
+      <!--side social media links-->
+      <div class="col-12 side-p">
+         <a href="#" class="fa fa-facebook"></a><br>
+         <a href="#" class="fa fa-at"></a><br>
+         <a href="#" class="fa fa-instagram"></a><br>
+         <a href="#" class="fa fa-github"></a>
       </div>
-      <!---->
-    </div>
+      <div class="c_container">
+         <!--navbar-->
+         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button
+               class="navbar-toggler"
+               type="button"
+               data-toggle="collapse"
+               data-target="#navbarSupportedContent"
+               aria-controls="navbarSupportedContent"
+               aria-expanded="false"
+               aria-label="Toggle navigation"
+               >
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                     <a class="nav-link h5" href="#"
+                        >O mne<span class="sr-only"></span
+                        ></a>
+                  </li>
+                  <li class="nav-item dropdown">
+                     <a
+                        class="nav-link dropdown-toggle h5"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        >
+                     Projekty
+                     </a>
+                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Softwerové</a>
+                        <a class="dropdown-item" href="#">Hardwerové</a>
+                     </div>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link h5" href="#">Kontakt</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="navbar-brand pl-2" href="#">
+                        <?xml version="1.0" encoding="iso-8859-1"?>
+                        <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                        <svg version="1.1"
+                           id="Layer_1" xmlns="http://www.w3.org/2000/svg" 
+                           xmlns:xlink="http://www.w3.org/1999/xlink"
+                           x="0px" y="0px"
+                           viewBox="0 0 512 512" 
+                           style="enable-background:new 0 0 512 512;" 
+                           xml:space="preserve" 
+                           height=30>
+                           <circle style="fill:#F0F0F0;" cx="256" cy="256" r="256"/>
+                           <g>
+                              <path style="fill:#0052B4;" d="M52.92,100.142c-20.109,26.163-35.272,56.318-44.101,89.077h133.178L52.92,100.142z"/>
+                              <path style="fill:#0052B4;" d="M503.181,189.219c-8.829-32.758-23.993-62.913-44.101-89.076l-89.075,89.076H503.181z"/>
+                              <path style="fill:#0052B4;" d="M8.819,322.784c8.83,32.758,23.993,62.913,44.101,89.075l89.074-89.075L8.819,322.784L8.819,322.784
+                                 z"/>
+                              <path style="fill:#0052B4;" d="M411.858,52.921c-26.163-20.109-56.317-35.272-89.076-44.102v133.177L411.858,52.921z"/>
+                              <path style="fill:#0052B4;" d="M100.142,459.079c26.163,20.109,56.318,35.272,89.076,44.102V370.005L100.142,459.079z"/>
+                              <path style="fill:#0052B4;" d="M189.217,8.819c-32.758,8.83-62.913,23.993-89.075,44.101l89.075,89.075V8.819z"/>
+                              <path style="fill:#0052B4;" d="M322.783,503.181c32.758-8.83,62.913-23.993,89.075-44.101l-89.075-89.075V503.181z"/>
+                              <path style="fill:#0052B4;" d="M370.005,322.784l89.075,89.076c20.108-26.162,35.272-56.318,44.101-89.076H370.005z"/>
+                           </g>
+                           <g>
+                           <path style="fill:#D80027;" d="M509.833,222.609h-220.44h-0.001V2.167C278.461,0.744,267.317,0,256,0
+                              c-11.319,0-22.461,0.744-33.391,2.167v220.44v0.001H2.167C0.744,233.539,0,244.683,0,256c0,11.319,0.744,22.461,2.167,33.391
+                              h220.44h0.001v220.442C233.539,511.256,244.681,512,256,512c11.317,0,22.461-0.743,33.391-2.167v-220.44v-0.001h220.442
+                              C511.256,278.461,512,267.319,512,256C512,244.683,511.256,233.539,509.833,222.609z"/>
+                           <path style="fill:#D80027;" d="M322.783,322.784L322.783,322.784L437.019,437.02c5.254-5.252,10.266-10.743,15.048-16.435
+                              l-97.802-97.802h-31.482V322.784z"/>
+                           <path style="fill:#D80027;" d="M189.217,322.784h-0.002L74.98,437.019c5.252,5.254,10.743,10.266,16.435,15.048l97.802-97.804
+                              V322.784z"/>
+                           <path style="fill:#D80027;" d="M189.217,189.219v-0.002L74.981,74.98c-5.254,5.252-10.266,10.743-15.048,16.435l97.803,97.803
+                              H189.217z"/>
+                           <path style="fill:#D80027;" d="M322.783,189.219L322.783,189.219L437.02,74.981c-5.252-5.254-10.743-10.266-16.435-15.047
+                              l-97.802,97.803V189.219z"/>
+                        </svg>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </nav>
+         <!--jumbotron-->
+         <div class="jumbotron pt-5 pb-5 mb-0">
+            <h1 class="display-4 pt-5">Uvítanie</h1>
+            <p class="lead">
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+               molestiae ea, itaque quia perspiciatis earum vel cum reiciendis
+            </p>
+            <hr class="my-4" />
+            <p>
+               It uses utility classes for typography and spacing to space content
+               out within the larger container.
+            </p>
+         </div>
+         <!--about me-->
+         
+          <hr class="bg-primary m-auto w-75"/>
+         
+         <div class="display-4 pt-5 pb-3">O mne</div>
+         <div class="row justify-content-around pb-5">
+           <div class="col-5">
+             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint eos asperiores quas error accusantium voluptates libero, itaque accusamus odio illum tenetur praesentium provident perspiciatis maiores. Eius nisi amet aspernatur distinctio.
+           </div>
+           <div class="col-5">
+             <img src="../images/title.png" class="card-img-top" alt="title">
+           </div>
+         </div>
+         <!--projects-->        
+            <hr class="bg-primary m-auto w-75"/>         
+         <div class="display-4 pt-5 pb-3">Projekty</div>
+         <div class="row justify-content-around cards m-0">
+            <div class="wrap col-4 p-1">
+               <div class="card"> 
+                  <div class="card-body p-0">
+                     <a href="https://hradskagardens.sk/"><img src="../images/hradska.png" class="card-img-top pb-4" alt="hradska"></a>
+                     <h5 class="card-title p-2">Hradská gardens</h5>
+                     <p class="card-text p-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                     
+                  </div>
+               </div>
+            </div>
+            <div class="wrap col-4 p-1">
+               <div class="card">
+                  <div class="card-body p-0">
+                     <a href="https://ecavpp.sk/"><img src="../images/ecavpp.png" class="card-img-top pb-4" alt="ecavpp"></a>
+                     <h5 class="card-title p-2">ECAV Poprad</h5>
+                     <p class="card-text p-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>                     
+                  </div>
+               </div>
+            </div>
+            <div class="wrap col-4 p-1">
+               <div class="card">
+                  <div class="card-body p-0">
+                     <a href="https://stolarstvofaix.sk/"><img src="../images/stolfaix.png" class="card-img-top pb-4" alt="faix"></a>
+                     <h5 class="card-title p-2">Stolárstvo Faix</h5>
+                     <p class="card-text p-2">Some quick example text to build on the card title and make up the bulk of the card's
+                        content.</p>            
+                  </div>
+               </div>
+            </div>
+            <div class="wrap col-4 p-1">
+               <div class="card">
+                  <div class="card-body p-0">
+                     <a href="https://github.com/mfindra/cookieclicker_bot"><img src="../images/cookieclicker.png" class="card-img-top pb-4" alt="cookie"></a>
+                     <h5 class="card-title p-2">CookieClicker Bot</h5>
+                     <p class="card-text p-2">Some quick example text to build on the card title and make up the bulk of the card's
+                        content.</p>            
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="display-5 mr-auto">Hardware</div>
+         <div class="row justify-content-around cards m-0 pb-5">
+            <div class="wrap col-4 p-1">
+               <div class="card">
+                  <img src="../images/arduino.png" class="card-img-top" alt="arduino">
+                  <div class="card-body">
+                     <h5 class="card-title">Arduino uno</h5>
+                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                        content.</p>                     
+                  </div>
+               </div>
+            </div>
+            <div class="wrap col-4 p-1">
+               <div class="card">
+                  <img src="../images/pc.png" class="card-img-top" alt="pc">
+                  <div class="card-body">
+                     <h5 class="card-title">Custom PC build</h5>
+                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                        content.</p>                     
+                  </div>
+               </div>
+            </div>                  
+         </div>
+         <!--school-->
+         <hr class="bg-primary m-auto w-75" />
+         <div class="display-4 pt-5 pb-3">Vzdelanie a znalosti</div>
+         <div class="display-5">IT znalosti</div>
+         <div class="row pb-5 pl-5">
+            <div class="col-10">
+               <table class="table table-borderless row">
+                  <tbody>
+                     <tr>
+                        <td>Jazyky:</td>
+                        <td>
+                           <p class="text-justify">
+                              Pascal, Python, C, Bash, Assembly, HTML, CSS, JavaScript
+                           </p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>Iné:</td>
+                        <td>jendoduché SQL, web scrape, automatization, pentest, grafika...</td>
+                     </tr>
+                  </tbody>
+               </table>
+               <p class="text-justify">
+                  Dlohodobý IT nadšenec, rád sa učím stále niečo nové...
+               </p>
+            </div>
+            <div class="col-2 side-t">
+               
+            </div>
+         </div>
+         <div class="display-5">Škola</div>
+         <div class="row justify-content-around">
+            <div class="col-11 pb-5">
+               <table class="table">
+                  <thead class="thead-light">
+                     <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Od</th>
+                        <th scope="col">Do</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>Gymnázium D. Tatarku 4666/7 058 01 Poprad</td>
+                        <td>2015</td>
+                        <td>2019</td>
+                     </tr>
+                     <tr>
+                        <td>VUT v Brně - Fakulta informačních technologií - BIT</td>
+                        <td>2019</td>
+                        <td>present</td>
+                     </tr>                     
+                  </tbody>
+               </table>               
+            </div>                        
+         </div>
+         <div class="display-5">Jazykové znalosti</div>
+         <div class="row pb-5 pl-5" >
+            <div class="col-6">
+               <table class="table table-borderless">                 
+                  <tbody>
+                     <tr>                        
+                        <td>Anglický jazyk</td>
+                        <td>C1-C2</td>
+                        <td>Štátna jazyková skúška</td>
+                     </tr>
+                     <tr>                        
+                        <td>Nemecký jazyk</td>
+                        <td>A2</td>
+                        <td></td>
+                     </tr>                    
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         
+         <!--work-->
+         <hr class="bg-primary m-auto w-75" />
+         <div class="display-4 pt-5 pb-3">Pracovné skúsenosti</div>
+         <div class="row justify-content-around">
+            <div class="col-11">
+               <table class="table">
+                  <thead class="thead-light">
+                     <tr>                        
+                        <th scope="col">Miesto</th>
+                        <th scope="col">Od</th>
+                        <th scope="col">Do</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>Lifeguard Vrbov SK</td>
+                        <td>Jún 2018</td>
+                        <td>Apríl 2019</td>
+                     </tr>
+                     <tr>                       
+                        <td>Jardin - logistic department NL</td>
+                        <td>Máj 2019</td>
+                        <td>Júl 2019</td>
+                     </tr>
+                     <tr>                       
+                        <td>Handl Tyrol - logistic department AT</td>
+                        <td>Júl 2019</td>
+                        <td>September 2019</td>
+                     </tr>                     
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         
 
-    <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
-    <!-- Optional JavaScript -->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+         
+      </div>
+      <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+      <!-- Optional JavaScript -->
+      <script
+         src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+         crossorigin="anonymous"
+         ></script>
+      <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+   </body>
 </html>
+
