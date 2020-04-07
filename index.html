@@ -14,7 +14,7 @@
    </head>
    <body>
       <!--side social media links-->
-      <div class="col-12 side-p">
+      <div class="col-12 side-p d-none d-lg-block">
          <a href="https://www.facebook.com/misko.sikuliacik" class="fa fa-facebook"></a><br>
          <a href="mailto:michalfindra@gmail.com" class="fa fa-at"></a><br>
          <a href="https://www.instagram.com/michaaal.f/" class="fa fa-instagram"></a><br>
@@ -90,7 +90,7 @@
                </ul>
             </div>
          </nav>
-         <!--jumbotron-->
+         <!--jumbotron
          <div class="vw d-flex align-items-center">
             <div class="jumbotron">
                <h1 class="display-4 pt-5">Uvítanie</h1>
@@ -99,15 +99,30 @@
                   molestiae ea, itaque quia perspiciatis earum vel cum reiciendis
                </p>
             </div>
+         </div>-->
+         <!--toptext-->
+         <div class="toptext_wrap d-flex align-items-center justify-content-end">
+            <h1>
+               <a href="#" class="typewrite" data-period="2000"
+                  data-type='[ "Hi, Im Michal.", "Code.", "Create.", "Progress." ]'>
+                  <span class="wrap"></span>
+               </a>
+            </h1>
          </div>
+         
          <!--about me-->         
          <hr class="bg-primary m-auto w-75"/>         
          <div class="display-4 pt-5 pb-3" id="about">O mne</div>
          <div class="row justify-content-around pb-5">
-           <div class="col-5 text-secondary">
-             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint eos asperiores quas error accusantium voluptates libero, itaque accusamus odio illum tenetur praesentium provident perspiciatis maiores. Eius nisi amet aspernatur distinctio.
+           <div class="col-sm-12 col-md-5 text-secondary">
+             <a href="#" class="text-secondary fa fa-map-marker m-0 p-0"></a> Brno <br>
+             študent IT VUT Brno <br>
+             freelance developer/programmer <br>
+             záujmy: CTF, HackTheBox!, CrackMe...<br>
+             IT fan <br>
+
            </div>
-           <div class="col-5">
+           <div class="col-8 col-md-5 mt-4">
              <img src="../images/title.png" class="card-img-top rounded" alt="title">
            </div>
          </div>
@@ -115,7 +130,7 @@
          <hr class="bg-primary m-auto w-75"/>         
          <div class="display-4 pt-5 pb-3" id="projects">Projekty</div>
          <div class="row justify-content-around cards m-0 pb-5">
-            <div class="wrap col-4 p-1">
+            <div class="wrap col-11 col-sm-6 col-lg-4 p-1">
                <div class="card">
                   <div class="card-body p-0">
                      <a href="https://hradskagardens.sk/">
@@ -127,10 +142,11 @@
                         </div>
                      </a>
                      <h5 class="card-title p-2 text-secondary">Hradská gardens</h5>
+                     <p class="card-text p-2 d-md-none text-center">HTML, CSS, Javascript, PHP </br> 2018</p>
                   </div>
                </div>
             </div>
-            <div class="wrap col-4 p-1">
+            <div class="wrap col-11 col-sm-6 col-lg-4 p-1">
                <div class="card">
                   <div class="card-body p-0">
                      <a href="https://ecavpp.sk/">
@@ -142,10 +158,11 @@
                         </div>
                      </a>
                      <h5 class="card-title p-2 text-secondary">ECAV Poprad</h5>
+                     <p class="card-text p-2 d-md-none text-center">WordPress</br>2017-present</p>
                   </div>
                </div>
             </div>
-            <div class="wrap col-4 p-1">
+            <div class="wrap col-11 col-sm-6 col-lg-4 p-1">
                <div class="card">
                   <div class="card-body p-0">
                      <a href="https://stolarstvofaix.sk/">
@@ -156,11 +173,12 @@
                            </div>
                         </div>
                      </a>
-                     <h5 class="card-title p-2 text-secondary">Stolárstvo Faix</h5>                                
+                     <h5 class="card-title p-2 text-secondary">Stolárstvo Faix</h5>   
+                     <p class="card-text p-2 d-md-none text-center">Bootstrap4, HTML, CSS </br>2019</p>
                   </div>
                </div>
             </div>
-            <div class="wrap col-4 p-1">
+            <div class="wrap col-11 col-sm-6 col-lg-4 p-1">
                <div class="card">
                   <div class="card-body p-0">
                      <a href="https://github.com/mfindra/cookieclicker_bot">
@@ -172,17 +190,36 @@
                         </div>
                      </a>
                      <h5 class="card-title p-2 text-secondary">Cookieclicker bot (vip)</h5>
+                     <p class="card-text p-2 d-md-none text-center">Python, Selenium</br>2020</p>
                   </div>
                </div>
             </div>
          </div>
+         <!--contact-->
+         <hr class="bg-primary m-auto w-75 d-flex d-lg-none" />
+         <div class="display-4 pt-5 pb-3 d-flex d-lg-none" id="about">Kontakt</div>
+         <div class="row justify-content-around mb-5 d-flex d-lg-none contacts">
+            <div class="col4">
+               <a href="https://www.facebook.com/misko.sikuliacik" class="fa fa-facebook"></a><br>
+            </div>
+            <div class="col4">
+               <a href="mailto:michalfindra@gmail.com" class="fa fa-at"></a><br>
+            </div>
+            <div class="col4">
+               <a href="https://www.instagram.com/michaaal.f/" class="fa fa-instagram"></a><br>
+            </div>
+            <div class="col4">
+               <a href="https://github.com/mfindra/" class="fa fa-github"></a>
+            </div>
+         </div>
+
          <!--school-->
          <hr class="bg-primary m-auto w-75" />
          <div class="display-4 pt-5 pb-3" id="school">Vzdelanie a znalosti</div>
          <div class="display-5">IT znalosti</div>
          <div class="row justify-content-around">
-            <div class="col-10">
-               <table class="table table-borderless row text-secondary">
+            <div class="col-12 col-md-10">
+               <table class="table table-borderless text-secondary">
                   <tbody>
                      <tr>
                         <td>Jazyky:</td>
@@ -204,7 +241,7 @@
          </div>
          <div class="display-5">Škola</div>
          <div class="row justify-content-around">
-            <div class="col-10">
+            <div class="col-12 col-md-10">
                <table class="table table-borderless text-secondary">                  
                   <tbody>
                      <tr>
@@ -221,7 +258,7 @@
          </div>
          <div class="display-5">Jazykové znalosti</div>
          <div class="row justify-content-around pb-5" >
-            <div class="col-10">
+            <div class="col-12 col-md-10">
                <table class="table table-borderless text-secondary">                 
                   <tbody>
                      <tr>                        
@@ -243,8 +280,8 @@
          <hr class="bg-primary m-auto w-75" />
          <div class="display-4 pt-5 pb-5">Pracovné skúsenosti</div>
          <div class="row justify-content-around">
-            <div class="col-11">
-               <table class="table table-borderless text-secondary">
+            <div class="col-12 col-md-11">
+               <table class="table table-borderless text-secondary table-responsive-sm">
                   <thead class="thead-light">
                      <tr>                        
                         <th scope="col">Miesto</th>
@@ -286,6 +323,7 @@
       </div>
       <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
       <!-- Optional JavaScript -->
+      <script src="scripts.js"></script>
       <script
          src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
          integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

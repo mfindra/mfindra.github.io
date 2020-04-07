@@ -7786,7 +7786,7 @@ body {
   position: relative; }
 
 .c_container {
-  margin: 10% 15%;
+  margin: 10% 5%;
   padding: 0.5rem;
   border: 5px solid #f9ba32;
   background-color: #f8f1e5; }
@@ -7900,5 +7900,28 @@ body {
 
 .vw {
   height: 50vh; }
+
+.toptext_wrap {
+  height: 50vh; }
+
+.toptext_wrap h1 {
+  font-size: 4rem;
+  padding-right: 10%;
+  text-align: right;
+  color: #f9ba32; }
+
+.toptext_wrap h1 a {
+  text-decoration: none;
+  color: inherit; }
+
+.contacts a {
+  font-size: 2.5rem; }
+
+@media (min-width: 576px) {
+  .c_container {
+    margin: 10% 5%; } }
+@media (min-width: 992px) {
+  .c_container {
+    margin: 10% 15%; } }
 
 /*# sourceMappingURL=main.css.map */
