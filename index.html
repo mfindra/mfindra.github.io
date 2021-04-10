@@ -25,7 +25,7 @@
          <!--navbar-->
          <nav class="navbar navbar-expand-lg navbar-light bg-primary">
             <a class="navbar-brand" href="/index.html">
-               <img src="images/logo.png" class="nav-logo" alt="logo">
+               <img src="images/logo.png" class="nav-logo align-middle" alt="logo">
             </a>
             <button
                class="navbar-toggler"
@@ -119,29 +119,31 @@
             </div>
          </div>-->
          <!--toptext-->
-         <div class="toptext_wrap d-flex align-items-center justify-content-end">
+         <!--
+         <div class="d-flex align-items-center justify-content-end pt-5 pb-5 pr-5">
             <h1>
                <a href="#" class="typewrite" data-period="2000"
                   data-type='[ "Hi, Im Michal.", "Code.", "Create.", "Progress." ]'>
                   <span class="wrap"></span>
                </a>
             </h1>
-         </div>
+         </div>-->
          
          <!--about me-->         
-         <hr class="bg-primary m-auto w-75"/>         
-         <div class="display-4 pt-5 pb-3" id="about">About me</div>
+            
+         <div class="display-4 pt-5 pb-3 pr-5 justify-content-end d-flex" >Michal Findra</div>
+         <div class="display-5 pb-3" id="about" >About me:</div>
          <div class="row justify-content-around pb-5">
-           <div class="col-sm-12 col-md-5 text-secondary">
-             <a href="#" class="text-primary fa fa-map-marker m-0 p-0"></a> Brno <br><br>
+           <div class="col-sm-12 col-md-6 text-secondary">
+            <h5> <a href="#" class="text-primary fa fa-map-marker m-0 p-0"></a> Brno </h5>
             <h5>- student IT VUT FIT Brno </h5>
-            <h5>- freelance developer/programmer, amatuer penetration tester, Wi-Fi security</h5> 
+            <h5>- developer/programmer, amateur penetration tester, Wi-Fi security</h5> 
             <h5>- interests: CTF, HackTheBox!, CrackMe...</h5>
             <h5>- TryHackMe profile: <a href="https://tryhackme.com/p/n0mi">link</a></h5>
             <h5>- HackTheBox! (new) profile: <a href="https://app.hackthebox.eu/profile/311131">link</a></h5>
             <h5>- IT fan</h5> 
            </div>
-           <div class="col-8 col-md-5 mt-4">
+           <div class="col-8 col-md-4 mt-4">
              <img src="images/title.png" class="card-img-top rounded" alt="title">
            </div>
          </div>
@@ -149,49 +151,43 @@
          <!--projects-->        
            
          <hr class="bg-primary m-auto w-75"/>      
-         <div class="display-5"  id="projects">School projetcs:</div>
+         <div class="display-5"  id="projects">School projects:</div>
          <div class="row justify-content-around">
             <div class="col-12 col-md-10">
                <table class="table table-borderless text-secondary">
                   <tbody>
                      <tr>
-                        <td>C</td>
+                        <td><h6>C/Python/PHP</h6></td>
                         <td>                           
-                           Compiler from code to machine code
+                           Go language subset compiler and interpreter in C, PHP and Python
                         </td>
-                     </tr>
+                     </tr>                                          
                      <tr>
-                        <td>Python/PHP</td>
-                        <td>                           
-                           Interpreter of machine code and automatic interpreter tester
-                        </td>
-                     </tr>                       
-                     <tr>
-                        <td>C</td>
+                        <td><h6>C</h6></td>
                         <td>                           
                            Process synchronization (semaphores)
                         </td>
                      </tr>
                      <tr>
-                        <td>SQL</td>
+                        <td><h6>SQL</h6></td>
                         <td>                           
                            Creating ER-diagrams, Use-case digrams, transforming into SQL database, operation with database.
                         </td>
                      </tr>
                      <tr>
-                        <td>Python</td>
+                        <td><h6>Python</h6></td>
                         <td>                           
                            Simple FSP client
                         </td>
                      </tr>
                      <tr>
-                        <td>C/C++</td>
+                        <td><h6>C/C++</h6></td>
                         <td>                           
                            Packet sniffer
                         </td>
                      </tr>
                      <tr>
-                        <td>C++/QT</td>
+                        <td><h6>C++/QT</h6></td>
                         <td>                           
                            Editor and interpreter of structural hierarchical function blocks
                         </td>
@@ -262,25 +258,24 @@
                            </div>
                         </div>
                      </a>
-                     <h5 class="card-title p-2 text-secondary">Cookieclicker bot (wip)</h5>
+                     <h5 class="card-title p-2 text-secondary">Cookieclicker bot</h5>
                      <p class="card-text p-2 d-lg-none text-center">Python, Selenium</br>2020</p>
                   </div>
                </div>
             </div>
-
             <div class="wrap col-11 col-sm-6 col-lg-4 p-1">
                <div class="card">
                   <div class="card-body p-0">
-                     <a href="https://github.com/mfindra/IZP_projekty">
+                     <a href="https://github.com/mfindra/prnt_scrape">
                         <div class="hvrbox">
-                           <img src="images/IZP.png" alt="IZP" class="hvrbox-layer_bottom card-img-top">
+                           <img src="images/prnt.png" alt="prnt" class="hvrbox-layer_bottom card-img-top ">
                            <div class="hvrbox-layer_top hvrbox-layer_slideup">
-                              <div class="hvrbox-text">C, </br>hidden due to copying </br>2019</div>
+                              <div class="hvrbox-text">Python</br>2021</div>
                            </div>
                         </div>
                      </a>
-                     <h5 class="card-title p-2 text-secondary">School C projetcs (IZP)</h5>
-                     <p class="card-text p-2 d-lg-none text-center">C, </br>hidden due to copying</br>2019</p>
+                     <h5 class="card-title p-2 text-secondary">Simple prnt.sc scraper</h5>
+                     <p class="card-text p-2 d-lg-none text-center">Python</br>2021</p>
                   </div>
                </div>
             </div>
@@ -288,22 +283,21 @@
             <div class="wrap col-11 col-sm-6 col-lg-4 p-1">
                <div class="card">
                   <div class="card-body p-0">
-                     <a href="https://github.com/mfindra/IOS_projects">
+                     <a href="https://github.com/mfindra/ITU-Grid-Blink">
                         <div class="hvrbox">
-                           <img src="images/terminal.png" alt="Faix" class="hvrbox-layer_bottom card-img-top ">
+                           <img src="images/gridblink.png" alt="prnt" class="hvrbox-layer_bottom card-img-top ">
                            <div class="hvrbox-layer_top hvrbox-layer_slideup">
-                              <div class="hvrbox-text">C, C++, Bash</br>hidden due to copying</br>2020</div>
+                              <div class="hvrbox-text">C#</br>2021</div>
                            </div>
                         </div>
                      </a>
-                     <h5 class="card-title p-2 text-secondary">School Bash/C projetcs (IOS)</h5>
-                     <p class="card-text p-2 d-lg-none text-center">C, C++, Bash</br>hidden due to copying</br>33/33</br>2020</p>
+                     <h5 class="card-title p-2 text-secondary">Grid blink game</h5>
+                     <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href='./grid_blink/index.html'">Play in browser!</button>
+                     <p class="card-text p-2 d-lg-none text-center">C#</br>2021</p>
                   </div>
                </div>
             </div>
          </div>
-
-         
 
          <!--contact-->
          <hr class="bg-primary m-auto w-75 d-flex d-lg-none" />
@@ -335,14 +329,14 @@
                <table class="table table-borderless text-secondary">
                   <tbody>
                      <tr>
-                        <td>Languages:</td>
+                        <td><h6>Languages:</h6></td>
                         <td>                           
-                              Python(scraping, automatization, Django, ...), C, C++, Bash, Assembly, HTML, CSS, JavaScript, Pascal, PHP
+                              Python (scraping, automatization, Django, ...), C, C++, Bash, Assembly, HTML, CSS, JavaScript, Pascal, PHP
                         </td>
                      </tr>
                      <tr>
-                        <td>Other:</td>
-                        <td>penetration testing, testing(BB, WB), Git, simple SQL, graphics, responsive design(bootstrap), arduino uno, Doker...</td>
+                        <td><h6>Other:</h6></td>
+                        <td>penetration testing, testing (BB, WB), Git, SQL, graphics, responsive design (bootstrap), arduino uno, Doker...</td>
                      </tr>                     
                   </tbody>
                </table>               
@@ -372,16 +366,16 @@
                   <tbody>
                      <tr>                        
                         <td>English</td>
-                        <td>C1-C2</td>
+                        <td>C1-C2 (fluent)</td>
                         <td>State Exam</td>
                      </tr>
                      <tr>                        
                         <td>German</td>
-                        <td>A2</td>
+                        <td>A2 (Conversational)</td>
                         <td></td>
                      </tr>
                      <tr>
-                        <td>Czech/Slovak</td>
+                        <td>Slovak/Czech</td>
                         <td>native</td>
                         <td></td>
                      </tr>

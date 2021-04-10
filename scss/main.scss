@@ -1,11 +1,10 @@
 $theme-colors: (
   "primary": #f9ba32,
   "secondary": #426e86,
-  "danger": #2f3131
+  "danger": #2f3131,
 );
 
 $jumbotron-bg: clear;
-
 $border-radius_lg: 0;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
@@ -26,7 +25,7 @@ body {
 }
 
 .c_container {
-  margin: 10% 5%;
+  margin: 5% 5%;
   padding: 0.5rem;
   border: 5px solid #f9ba32;
   background-color: #f8f1e5;
@@ -177,7 +176,7 @@ body {
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .c_container {
-    margin: 10% 5%;
+    margin: 5% 5%;
   }
 }
 
@@ -188,7 +187,7 @@ body {
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .c_container {
-    margin: 10% 15%;
+    margin: 5% 15%;
   }
 }
 
