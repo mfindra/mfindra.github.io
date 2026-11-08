@@ -1,366 +1,548 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-   <head>
-      <!-- Required meta tags -->
-      <meta charset="utf-8" />
-      <meta
-         name="viewport"
-         content="width=device-width, initial-scale=1, shrink-to-fit=no"
-         />
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="scss/main.css" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <title>Programming portfolio</title>
-   </head>
-   <body>
-      <!--side social media links-->
-      <div class="col-12 side-p d-none d-lg-block">
-         <a href="https://www.linkedin.com/in/michal-findra-3138431b6/" class="fa fa-linkedin"></a><br>
-         <a href="mailto:michalfindra@gmail.com" class="fa fa-at"></a><br>
-         <a href="https://github.com/mfindra/" class="fa fa-github"></a>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Michal Findra</title>
+<meta name="description" content="Michal Findra — Product Security Engineer at Red Hat.">
+<meta name="theme-color" content="#0b0c0b">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+  :root {
+    --bg: #0b0c0b;
+    --bg-glow: #121a13;
+    --fg: #d6d8d4;
+    --dim: #828680;
+    --accent: #a6e3a1;
+    --accent-soft: rgba(166, 227, 161, 0.12);
+    --rule: #232622;
+    --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scrollbar-gutter: stable; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--fg);
+    font: 16px/1.75 system-ui, -apple-system, "Segoe UI", sans-serif;
+    background:
+      radial-gradient(70rem 40rem at 15% -10%, var(--bg-glow), transparent 60%),
+      radial-gradient(50rem 30rem at 110% 20%, #0f1410, transparent 55%),
+      var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--accent); color: #0b0c0b; }
+
+  main {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 5rem 1.75rem 7rem;
+  }
+
+  /* ---- header ---- */
+  .intro {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2.75rem;
+    animation: rise 0.7s ease-out both;
+  }
+  .avatar-wrap {
+    position: relative;
+    flex-shrink: 0;
+  }
+  .avatar-wrap::before {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    background: conic-gradient(from 220deg, var(--accent), transparent 40%, transparent 75%, var(--accent));
+    opacity: 0.35;
+    filter: blur(2px);
+  }
+  .avatar {
+    position: relative;
+    display: block;
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 15%;
+    filter: grayscale(20%) contrast(1.02);
+    border: 1px solid var(--rule);
+  }
+  .term {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--dim);
+    margin: 0 0 0.6rem;
+  }
+  .term .u { color: var(--accent); }
+  .term .sym { color: var(--dim); }
+  .term .cmd { color: var(--fg); }
+  .cursor {
+    display: inline-block;
+    width: 0.5em;
+    height: 0.78em;
+    margin-left: 0.12em;
+    background: var(--accent);
+    vertical-align: -0.03em;
+    animation: blink 1.1s steps(1) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 2.9rem);
+    font-weight: 650;
+    letter-spacing: -0.035em;
+    line-height: 1.1;
+    margin: 0 0 0.5rem;
+    color: #eef0ea;
+  }
+  .role {
+    margin: 0;
+    color: var(--dim);
+    font-size: 0.95rem;
+  }
+  .role .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 8px var(--accent);
+    display: inline-block;
+    margin-right: 0.55rem;
+    vertical-align: middle;
+  }
+
+  .links {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin: 0 0 3.5rem;
+    animation: rise 0.7s 0.1s ease-out both;
+  }
+  .links a {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--dim);
+    text-decoration: none;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 0.35rem 0.7rem;
+    transition: color 0.18s, border-color 0.18s, background 0.18s;
+  }
+  .links a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+  .links a::after { content: " ↗"; opacity: 0.6; }
+
+  /* ---- sections ---- */
+  section { margin-top: 3.25rem; }
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--dim);
+    margin: 0 0 1.5rem;
+  }
+  h2 .path { color: var(--accent); }
+  h2 .sym { color: var(--dim); }
+  h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--rule), transparent);
+  }
+
+  /* timeline */
+  .timeline {
+    position: relative;
+    padding-left: 1.4rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--accent), var(--rule) 60%, transparent);
+    opacity: 0.5;
+  }
+  .entry { position: relative; margin-bottom: 1.9rem; }
+  .entry:last-child { margin-bottom: 0; }
+  .entry::before {
+    content: "";
+    position: absolute;
+    left: calc(-1.4rem - 2.5px);
+    top: 0.62rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 1px solid var(--accent);
+  }
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+  .entry-title {
+    font-weight: 600;
+    color: #eceee8;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .entry-meta {
+    font-family: var(--mono);
+    color: var(--dim);
+    font-size: 0.78rem;
+  }
+  .entry-sub { color: var(--dim); font-size: 0.9rem; margin: 0.15rem 0 0.4rem; }
+  .entry p { margin: 0.4rem 0 0; }
+  .entry p.entry-sub { margin-top: 0.15rem; }
+
+  /* tags */
+  ul.tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    padding: 0;
+    margin: 0.8rem 0 0;
+  }
+  ul.tags li {
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    color: var(--dim);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 0.18rem 0.55rem;
+    transition: color 0.18s, border-color 0.18s;
+  }
+  ul.tags li:hover { color: var(--accent); border-color: #3a4438; }
+
+  /* lists */
+  ul.list { list-style: none; margin: 0; padding: 0; }
+  ul.list li {
+    position: relative;
+    padding-left: 1.4rem;
+    margin: 0.45rem 0;
+  }
+  ul.list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.8rem;
+    top: 0.1rem;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 3rem;
+  }
+  @media (max-width: 34rem) {
+    .two-col { grid-template-columns: 1fr; }
+    .intro { gap: 1.25rem; }
+    .avatar { width: 84px; height: 84px; }
+  }
+  @media (max-width: 30rem) {
+    main { padding: 3.5rem 1.25rem 5rem; }
+    .intro { gap: 1rem; }
+    .avatar { width: 72px; height: 72px; }
+    h1 { font-size: 1.9rem; }
+    .role { font-size: 0.88rem; }
+    .links a { font-size: 0.78rem; padding: 0.3rem 0.55rem; }
+    h2 { gap: 0.6rem; letter-spacing: 0.14em; }
+    .entry-title { font-size: 0.98rem; }
+    .entry-meta { font-size: 0.74rem; }
+    .timeline { padding-left: 1.15rem; }
+    .entry::before { left: calc(-1.15rem - 2.5px); }
+  }
+
+  .lang { display: flex; justify-content: space-between; gap: 1rem; }
+  .lang span:last-child { font-family: var(--mono); font-size: 0.78rem; color: var(--dim); }
+
+  a { color: var(--fg); text-decoration-color: #4a4f48; text-underline-offset: 3px; transition: color 0.15s; }
+  a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+
+  .crt-toggle {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--dim);
+    background: none;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 0.15rem 0.55rem;
+    cursor: pointer;
+    transition: color 0.18s, border-color 0.18s;
+  }
+  .crt-toggle:hover { color: var(--accent); border-color: var(--accent); }
+  .foot-right { display: flex; align-items: center; gap: 1rem; }
+
+  html.crt body { text-shadow: 0 0 5px rgba(166, 227, 161, 0.16); }
+  html.crt body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    background: repeating-linear-gradient(to bottom, rgba(190, 255, 190, 0.05) 0 1px, transparent 1px 3px);
+  }
+
+  footer {
+    margin-top: 5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: #5c605a;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="intro">
+      <div class="avatar-wrap">
+        <img class="avatar" src="images/me.jpg" alt="Michal Findra" width="311" height="400">
       </div>
-      <div class="c_container">
-         <!--navbar-->
-         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-            <a class="navbar-brand" href="/index.html">
-               <img src="images/logo.png" class="nav-logo align-middle" alt="logo">
-            </a>
-            <button
-               class="navbar-toggler"
-               type="button"
-               data-toggle="collapse"
-               data-target="#navbarSupportedContent"
-               aria-controls="navbarSupportedContent"
-               aria-expanded="false"
-               aria-label="Toggle navigation"
-               >
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-               <ul class="navbar-nav ml-auto">
-                  <li class="nav-item ">
-                     <a class="nav-link h5 text-danger" href="#about"
-                        >About me</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link h5 text-danger" href="#projects">Projects</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link h5 text-danger" href="#school">Education</a>
-                  </li>
-                  
-               </ul>
-            </div>
-         </nav>
-         <!--jumbotron
-         <div class="vw d-flex align-items-center">
-            <div class="jumbotron">
-               <h1 class="display-4 pt-5">Uvítanie</h1>
-               <p class="lead text-secondary">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-                  molestiae ea, itaque quia perspiciatis earum vel cum reiciendis
-               </p>
-            </div>
-         </div>-->
-         <!--toptext-->
-         <!--
-         <div class="d-flex align-items-center justify-content-end pt-5 pb-5 pr-5">
-            <h1>
-               <a href="#" class="typewrite" data-period="2000"
-                  data-type='[ "Hi, Im Michal.", "Code.", "Create.", "Progress." ]'>
-                  <span class="wrap"></span>
-               </a>
-            </h1>
-         </div>-->
-         
-         <!--about me-->         
-            
-         <div class="display-4 pt-5 pb-3 pr-5 justify-content-end d-flex" >Bc. Michal Findra</div>
-         <div class="display-5 pb-3" id="about" >About me:</div>
-         <div class="row justify-content-around pb-5">
-           <div class="col-sm-12 col-md-6 text-secondary">
-            <h5> <a href="#" class="text-primary fa fa-map-marker m-0 p-0"></a> Brno </h5>
-            <h5>- student VUT FIT Brno (Master's degree @ <a href="https://www.fit.vut.cz/study/field/14470/.en">Cybersecurity</a>)</h5>
-            <h5>- developer/programmer, amateur penetration tester, Wi-Fi security</h5> 
-            <h5>- interests: CTF, HackTheBox!, CrackMe...</h5>
-            <h5>- TryHackMe profile: <a href="https://tryhackme.com/p/n0mi">link</a></h5>
-            <h5>- HackTheBox! (new) profile: <a href="https://app.hackthebox.eu/profile/311131">link</a></h5>
-            <h5>- Retro tech and game consoles fan and collector</h5>
-            <h5>- thinkpad enthusiast</h5>
-           </div>
-           <div class="col-8 col-md-3 mt-3">
-             <img src="images/title.png" class="card-img-top rounded" alt="title">
-           </div>
-         </div>
-
-         <!--projects-->        
-         
-         <hr class="bg-primary m-auto w-75"/>      
-         <div class="display-4 pt-5 pb-3">Projects</div>
-
-         <div class="display-5 pl-5 pb-3 pt-3"><a href="https://github.com/mfindra">Github repository</a></div>
-
-   
-         <div class="display-5 pl-5"  id="projects">Bachelor thesis:</div>
-         <div class="row justify-content-around">
-            <div class="col-12 col-md-10">
-               <table class="table table-borderless text-secondary">
-                  <tbody>
-                     <tr>
-                        <td>Extension of the Monitoring Probe with Wi-Fi Support. <a href="https://www.vut.cz/en/students/final-thesis/detail/145178">Archive link</a></td>
-
-                     </tr>  
-               </tbody>
-            </table>               
-         </div>
-         </div>   
-
-         <!--
-            <div class="display-5"  id="projects">School projects:</div>
-            <div class="row justify-content-around">
-               <div class="col-12 col-md-10">
-                  <table class="table table-borderless text-secondary">
-                     <tbody>
-                        <tr>
-                           <td><h6>C/Python/PHP</h6></td>
-                           <td>                           
-                              Go language subset compiler and interpreter in C, PHP and Python
-                           </td>
-                     </tr>                                          
-                     <tr>
-                        <td><h6>C</h6></td>
-                        <td>                           
-                           Process synchronization (semaphores)
-                        </td>
-                     </tr>
-                     <tr>
-                        <td><h6>SQL</h6></td>
-                        <td>                           
-                           Creating ER-diagrams, Use-case digrams, transforming into SQL database, operation with database.
-                        </td>
-                     </tr>
-                     <tr>
-                        <td><h6>Python</h6></td>
-                        <td>                           
-                           Simple FSP client
-                        </td>
-                     </tr>
-                     <tr>
-                        <td><h6>C/C++</h6></td>
-                        <td>                           
-                           Packet sniffer
-                        </td>
-                     </tr>
-                     <tr>
-                        <td><h6>C++/QT</h6></td>
-                        <td>                           
-                           Editor and interpreter of structural hierarchical function blocks
-                        </td>
-                     </tr>
-                  </tbody>
-               </table>               
-            </div>
-         </div>   
-      -->
-
-
-
-
-         <!--contact-->
-         <hr class="bg-primary m-auto w-75 d-flex d-lg-none" />
-         <div class="display-4 pt-5 pb-3 d-flex d-lg-none" id="about">Contact</div>
-         <div class="row justify-content-around mb-5 d-flex d-lg-none contacts">
-            <div class="col4">
-               <a href="https://www.linkedin.com/in/michal-findra-3138431b6/" class="fa fa-linkedin"></a><br>
-            </div>
-            <div class="col4">
-               <a href="https://www.facebook.com/misko.sikuliacik" class="fa fa-facebook"></a><br>
-            </div>
-            <div class="col4">
-               <a href="mailto:michalfindra@gmail.com" class="fa fa-at"></a><br>
-            </div>
-            <div class="col4">
-               <a href="https://www.instagram.com/michaaal.f/" class="fa fa-instagram"></a><br>
-            </div>
-            <div class="col4">
-               <a href="https://github.com/mfindra/" class="fa fa-github"></a>
-            </div>
-         </div>
-
-         <!--school-->
-         <hr class="bg-primary m-auto w-75" />
-         <div class="display-4 pt-5 pb-3" id="school">Education</div>
-         <div class="display-5">IT knowledge</div>
-         <div class="row justify-content-around">
-            <div class="col-12 col-md-10">
-               <table class="table table-borderless text-secondary">
-                  <tbody>
-                     <tr>
-                        <td><h6>Languages:</h6></td>
-                        <td>                           
-                              Python, C, C++, Bash, Assembly, JavaScript, Solidity, Jenkins...
-                        </td>
-                     </tr>
-                     <tr>
-                        <td><h6>Other:</h6></td>
-                        <td>penetration testing, testing (BB, WB), containerization, parallelization, writing documentation :) ...</td>
-                     </tr>                     
-                  </tbody>
-               </table>               
-            </div>
-         </div>
-         <div class="display-5">School</div>
-         <div class="row justify-content-around">
-            <div class="col-12 col-md-10">
-               <table class="table table-borderless text-secondary">                  
-                  <tbody>
-                     <tr>
-                        <td>Gymnázium D. Tatarku 4666/7 058 01 Poprad</td>
-                        <td>2015-2019</td>      
-                        <td>&zwnj;</td>                 
-                     </tr>
-                     <tr>
-                        <td>VUT v Brně - Fakulta informačních technologií - BIT</td>
-                        <td>2019-2022</td>                        
-                        <td>&zwnj;</td>                 
-                     </tr>                     
-                     <tr>
-                        <td>VUT v Brně - Fakulta informačních technologií - MIT (Cybersecurity)</td>
-                        <td>2022-Present</td>                        
-                        <td>&zwnj;</td>                 
-                     </tr>                     
-                  </tbody>
-               </table>               
-            </div>                        
-         </div>
-         <div class="display-5">Language</div>
-         <div class="row justify-content-around pb-5" >
-            <div class="col-12 col-md-10">
-               <table class="table table-borderless text-secondary">                 
-                  <tbody>
-                     <tr>                        
-                        <td>English</td>
-                        <td>C1-C2 (fluent)</td>
-                        <td>State Exam</td>
-                     </tr>
-                     <tr>                        
-                        <td>German</td>
-                        <td>A2/B1 (Conversational)</td>
-                        <td>400+ days Dualingo streak ;)</td>
-                     </tr>
-                     <tr>
-                        <td>Slovak/Czech</td>
-                        <td>native</td>
-                        <td></td>
-                     </tr>
-                  </tbody>
-               </table>
-            </div>
-         </div>
-         <div class="display-5">Certificates</div>
-         <div class="row justify-content-around pb-5" >
-         <div class="col-12 col-md-10">
-            <table class="table table-borderless text-secondary">                 
-               <tbody>
-                  <tr>                        
-                     <td>ISTQB Foundation level</td>
-                     <td>Exam proof - LinkedIn profile</td>
-                     <td></td>
-                  </tr>
-                  <tr>                        
-                     <td>Security White Belt</td>
-                     <td>Exam proof - LinkedIn profile</td>
-                  </tr>
-               </tbody>
-            </table>
-         </div>
+      <div>
+        <p class="term"><span class="u">guest@mfindra</span><span class="sym">:~$</span><span class="cmd">whoami</span></p>
+        <h1>Michal Findra<span class="cursor"></span></h1>
+        <p class="role"><span class="dot"></span>Product Security Engineer · Incident Commander &amp; CRA · Red Hat · Brno, CZ</p>
       </div>
-         
-         <!--work-->
-         <hr class="bg-primary m-auto w-75" />
-         <div class="display-4 pt-5 pb-5">Work</div>
-         <div class="row justify-content-around">
-            <div class="col-12 col-md-11">
-               <table class="table table-borderless text-secondary table-responsive-sm">
-                  <thead class="thead-light">
-                     <tr>                        
-                        <th scope="col">Position</th>
-                        <th scope="col">From</th>
-                        <th scope="col">To</th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                     <tr>
-                        <td>Lifeguard Vrbov SK</td>
-                        <td>June 2018</td>
-                        <td>September 2020</td>
-                     </tr>
-                     <tr>                       
-                        <td>Jardin - logistic department NL</td>
-                        <td>May 2019</td>
-                        <td>July 2019</td>
-                     </tr>
-                     <tr>                       
-                        <td>Handl Tyrol - logistic department AT</td>
-                        <td>July 2019</td>
-                        <td>September 2019</td>
-                     </tr>                     
-                     <tr>                       
-                        <td>Redhat - Quality Engineer</td>
-                        <td>Jul 2021</td>
-                        <td>present</td>
-                     </tr>                     
-                  </tbody>
-               </table>
-            </div>
-         </div>
+    </div>
+    <p class="term"><span class="u">guest@mfindra</span><span class="sym">:~$</span><span class="cmd">ls ./links</span></p>
+    <nav class="links">
+      <a href="#" class="email" data-address="bWljaGFsZmluZHJhQGdtYWlsLmNvbQ==">email</a>
+      <a href="https://github.com/mfindra">github</a>
+      <a href="https://www.linkedin.com/in/michal-findra-3138431b6/">linkedin</a>
+    </nav>
+  </header>
 
-         <hr class="bg-primary m-auto w-75"/>  
-         <div class="display-5 pt-5 pb-3">Reward game if you scrolled this far...</div>
-
-         <div class="row justify-content-around cards m-0 pb-5">
-            <div class="wrap col-11 col-sm-6 col-lg-4 p-1">
-               <div class="card">
-                  <div class="card-body p-0">
-                     <a href="https://github.com/mfindra/ITU-Grid-Blink">
-                        <div class="hvrbox">
-                           <img src="images/gridblink.png" alt="prnt" class="hvrbox-layer_bottom card-img-top ">
-                           <div class="hvrbox-layer_top hvrbox-layer_slideup">
-                              <div class="hvrbox-text">C#</br>2021</div>
-                           </div>
-                        </div>
-                     </a>
-                     <h5 class="card-title p-2 text-secondary">Grid blink game</h5>
-                     <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href='./grid_blink/index.html'">Play in browser!</button>
-                     <p class="card-text p-2 d-lg-none text-center">C#</br>2021</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-
-         <!--footer-->
-         <div class="footer bg-danger mt-5">
-            <div class="row">
-               <div class="col-12 text-secondary mt-3 text-center">
-                  ® MF 2023               
-               </div>
-               <div class="col-12 text-secondary text-center">
-                  <a href="mailto:michalfindra@gmail.com" class="text-secondary">michalfindra@gmail.com</a>
-               </div>               
-            </div>
-         </div>         
+  <section>
+    <h2><span class="sym">$</span> ls <span class="path">~/experience</span></h2>
+    <div class="timeline">
+      <div class="entry">
+        <div class="entry-head">
+          <p class="entry-title">Product Security Engineer — Incident Commander &amp; CRA</p>
+          <span class="entry-meta">2025 — present</span>
+        </div>
+        <p class="entry-sub">Red Hat, Brno CZ</p>
+        <p>Incident Commander coordinating vulnerability management, severe incident response, and mandatory regulatory reporting. Ensuring manufactured projects and stewarded open-source projects comply with the EU Cyber Resilience Act. Earlier in the role: vulnerability management and AI initiatives across Red Hat products.</p>
+        <ul class="tags">
+          <li>incident response</li><li>vulnerability management</li><li>EU CRA</li><li>regulatory reporting</li><li>ai</li>
+        </ul>
       </div>
-      <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
-      <!-- Optional JavaScript -->
-      <script src="scripts.js"></script>
-   <!-- jQuery first, then Popper.js, then Bootstrap JS --> 
-   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>   
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-     
-   </body>
+      <div class="entry">
+        <div class="entry-head">
+          <p class="entry-title">Product Security Engineer — Vulnerability Management</p>
+          <span class="entry-meta">2024 — 2025</span>
+        </div>
+        <p class="entry-sub">Red Hat, Brno CZ</p>
+        <p>Incoming CVE analysis, PSIRT workflow coordination, upstream coordination, security support for internal and external customers, tooling improvements, documentation.</p>
+        <ul class="tags">
+          <li>python</li><li>cve analysis</li><li>upstream coordination</li><li>tooling</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <p class="entry-title">Quality Engineer — Red Hat Insights</p>
+          <span class="entry-meta">2021 — 2024</span>
+        </div>
+        <p class="entry-sub">Platform Access &amp; Management team, Brno CZ</p>
+        <p>Test automation and CI/CD for Insights services: managing IQE plugins, validation and verification of development work, contributions to IQE core.</p>
+        <ul class="tags">
+          <li>python</li><li>go</li><li>jenkins</li><li>openshift</li><li>docker</li><li>kafka</li><li>shell</li><li>ci/cd</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="sym">$</span> ls <span class="path">~/education</span></h2>
+    <div class="timeline">
+      <div class="entry">
+        <div class="entry-head">
+          <p class="entry-title">Master's, Information Technology and AI</p>
+          <span class="entry-meta">2024</span>
+        </div>
+        <p class="entry-sub">FIT Brno University of Technology — Cyber Security</p>
+        <p>Thesis: <a href="https://www.vut.cz/en/students/final-thesis/detail/157039">Image SBOM security analysis tooling</a> built in Go on Grype and Syft with Defect Dojo reporting, in collaboration with the Insights platform security team.</p>
+        <ul class="tags">
+          <li>sbom</li><li>grype</li><li>syft</li><li>defect dojo</li><li>go</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <p class="entry-title">Bachelor's, Information Technology</p>
+          <span class="entry-meta">2022</span>
+        </div>
+        <p class="entry-sub">FIT Brno University of Technology</p>
+        <p>Thesis: <a href="https://www.vut.cz/en/students/final-thesis/detail/145178">Extension of the Monitoring Probe with Wi-Fi Support</a> — Wi-Fi traffic capture and analysis for the ANT research group.</p>
+        <ul class="tags">
+          <li>wi-fi security</li><li>c/c++</li><li>networking</li><li>traffic analysis</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="sym">$</span> ls <span class="path">~/projects</span></h2>
+    <div class="timeline" id="projects">
+      <div class="entry">
+        <div class="entry-head">
+          <p class="entry-title"><a href="https://github.com/mfindra/Palm-veins-identifier">Palm veins identifier</a></p>
+          <span class="entry-meta">jupyter · ★ 26</span>
+        </div>
+        <p>Palm vein pattern extraction and analysis for biometric identification, using two models for feature extraction.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <p class="entry-title"><a href="https://github.com/mfindra/ICMP-file-transfer">ICMP file transfer</a></p>
+          <span class="entry-meta">c++</span>
+        </div>
+        <p>File transfer over ICMP packets with AES encryption — a covert-channel exercise in network security.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <p class="entry-title"><a href="https://github.com/mfindra/Simple-Reed-Solomon">Simple Reed-Solomon</a></p>
+          <span class="entry-meta">c++</span>
+        </div>
+        <p>Reed-Solomon encryptor and decryptor implemented from scratch.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <p class="entry-title"><a href="https://github.com/mfindra/bittorent-traffic-analyzer">BitTorrent traffic analyzer</a></p>
+          <span class="entry-meta">python · ★ 1</span>
+        </div>
+        <p>Parser and analyzer for BitTorrent traffic from pcap captures and CSV exports.</p>
+      </div>
+    </div>
+    <p style="margin:1.5rem 0 0;font-family:var(--mono);font-size:.8rem;color:var(--dim)">more on <a href="https://github.com/mfindra?tab=repositories">github</a></p>
+  </section>
+
+  <section>
+    <h2><span class="sym">$</span> ls <span class="path">~/certs</span></h2>
+    <ul class="list">
+      <li>Cisco CCNA CyberOps</li>
+      <li>ISTQB</li>
+      <li>Red Hat Security White Belt</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="sym">$</span> ls <span class="path">~/languages</span></h2>
+    <div class="two-col">
+      <div class="lang"><span>Slovak / Czech</span><span>native</span></div>
+      <div class="lang"><span>English</span><span>C1 — C2</span></div>
+      <div class="lang"><span>German</span><span>B1</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>mfindra.github.io</span>
+    <span class="foot-right">
+      <button class="crt-toggle" type="button" aria-pressed="false">crt: off</button>
+      <span>built by hand</span>
+    </span>
+  </footer>
+</main>
+<script>
+  document.querySelectorAll("a.email").forEach(function (a) {
+    a.href = "mailto:" + atob(a.dataset.address);
+    a.removeAttribute("data-address");
+  });
+
+  (function () {
+    var btn = document.querySelector(".crt-toggle");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      var on = document.documentElement.classList.toggle("crt");
+      btn.textContent = "crt: " + (on ? "on" : "off");
+      btn.setAttribute("aria-pressed", String(on));
+    });
+  })();
+
+  (function () {
+    var list = document.getElementById("projects");
+    if (!list || !window.fetch) return;
+    var api = "https://api.github.com/users/mfindra/repos?per_page=100&sort=updated";
+
+    function el(tag, cls, text) {
+      var n = document.createElement(tag);
+      if (cls) n.className = cls;
+      if (text) n.textContent = text;
+      return n;
+    }
+
+    function entry(repo) {
+      var wrap = el("div", "entry");
+      var head = el("div", "entry-head");
+      var title = el("p", "entry-title");
+      var label = repo.name.replace(/[-_]/g, " ");
+      label = label.charAt(0).toUpperCase() + label.slice(1);
+      var link = el("a", null, label);
+      link.href = repo.html_url;
+      title.appendChild(link);
+
+      var meta = [repo.language ? repo.language.toLowerCase() : null];
+      if (repo.stargazers_count) meta.push("★ " + repo.stargazers_count);
+      if (repo.forks_count) meta.push("forks " + repo.forks_count);
+
+      head.appendChild(title);
+      head.appendChild(el("span", "entry-meta", meta.filter(Boolean).join(" · ")));
+      wrap.appendChild(head);
+      if (repo.description) wrap.appendChild(el("p", null, repo.description));
+      return wrap;
+    }
+
+    fetch(api, { headers: { Accept: "application/vnd.github+json" } })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (repos) {
+        var picked = repos
+          .filter(function (r) { return !r.fork && r.description; })
+          .filter(function (r) { return !/^grid[-_ ]?blink$/i.test(r.name); })
+          .sort(function (a, b) {
+            var ta = /token/i.test(a.name) ? 1 : 0;
+            var tb = /token/i.test(b.name) ? 1 : 0;
+            return (ta - tb) ||
+                   (b.stargazers_count - a.stargazers_count) ||
+                   (new Date(b.pushed_at) - new Date(a.pushed_at));
+          })
+          .slice(0, 6);
+        if (!picked.length) return;
+        list.replaceChildren.apply(list, picked.map(entry));
+      })
+      .catch(function () { /* keep static list */ });
+  })();
+</script>
+</body>
 </html>
